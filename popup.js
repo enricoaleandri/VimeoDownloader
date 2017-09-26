@@ -4,7 +4,9 @@ chrome.runtime.getBackgroundPage(function(win) {
 
   downloadButton.addEventListener("click", function(e) {
     e.preventDefault();
-    win.downloader.downloadCurrentVideo();
+    win.downloader.downloadCurrentVideo(function(){
+      alert("OTTENUTO VIDEO", arguments);
+    });
     window.close();
   });
 
